@@ -23,6 +23,6 @@ window.addEventListener('keydown', function(e){
             console.log("Right")
             break;
         default:
-            console.log("fu")
+            console.log("nopppeeeeeeeeee!!!!!")
     }
 })
