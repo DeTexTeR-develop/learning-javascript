@@ -37,6 +37,7 @@ fetch('https://icanhazdadjoke.com/') //this gonna return a promise to us
     })
     /*
     this means when all the data is back and is parsed to json then 
+    we can also write it as response.json().then(...) because that also returns a promis
     */
     .then((data)=>{
         console.log("DATA PARSED " + data);
@@ -44,3 +45,46 @@ fetch('https://icanhazdadjoke.com/') //this gonna return a promise to us
     .catch((err) => {
         console.log("OH noo!!", err);
     })
+
+// using async and await for same above code
+
+const fetchApiData = async () =>{
+try{
+    let res = await fetch('https://icanhazdadjoke.com/') //this gonna return a promise to us
+    let data = await res.json()
+
+    console.log(data)
+}catch(e){
+    console.log("OHHHH NOOO ERRORRR!!!", e)
+}
+}
+
+
+
+/*last way to request is using a library named as axios
+
+we can use axios library in many ways by just pasting the script in our html just before our script tag
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+*/
+
+axios.get('https://icanhazdadjoke.com/')
+.then(response => {
+    console.log(response.data)
+})
+.catch(er => {
+    console.log("OHHH NOOO ERROR!!!!", er)
+})
+
+// we can use async and await
+
+const fetchDataApi = async () =>{
+    try{
+        const res = await axios.get('https://icanhazdadjoke.com/')
+        console.log("SUCESS!!!", res.data);
+    }
+    catch(err){
+        console.log("OHH NOO ERRORR!!!",err)
+    }
+}
