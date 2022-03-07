@@ -169,8 +169,66 @@ class Color{
         this.name = name;
     }
     greet(){
-        return console.log("Hello :)"); //we dont need to type prototype and stuff like we did back there 
+        console.log(this.b);
+        console.log("Hello :)");        //we dont need to type prototype and stuff like we did back there 
                                         //class just collects everything togethor
     }
+    innerRGB(){
+        const {r,g,b} = this;
+        return `${r}, ${g}, ${b}`;
+    }
+
+    rgb(){
+        return `rgb(${this.innerRGB()})`
+    }
+    rgba(a){
+        return `rgba(${this.innerRGB}, ${a})`
+    }
 }
-const first = new Color(255, 67, 56, 'white'); //this creates a object with this properties
+const white = new Color(255, 255 , 255, 'white'); //this creates a object with this properties
+const red = new Color(255, 67, 89, 'red');
+
+//anytime we are inside a class this refers to the instance of the class(individual color object) unitl we use new
+// when we use this inside new it refers to the individual object
+
+
+
+
+//Extend and super
+
+
+class Pet{
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+    eat(){
+        return `${this.name} is eating!!!`
+
+    }
+}
+
+class Cat extends Pet{
+    // constructor(name, age){
+    //     this.name = name;
+    //     this.age = age;
+    // }
+    // eat(){
+    //     return `${this.name} is eating!!!`
+    // }
+    meow(){
+        return `meaaaaaoooo `
+    }
+}
+class Dog extends Pet
+    // constructor(name, age){
+    //     this.name = name;
+    //     this.age = age;
+    // }
+    // eat(){
+    //     return `${this.name} is eating!!!`;  
+    // }
+    sleeping(){
+        return `${this.name} is sleeping `
+    }
+}
