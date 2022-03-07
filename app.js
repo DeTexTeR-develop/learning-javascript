@@ -137,4 +137,40 @@ function makeColor(r,g,b){
     return color;
 
 }
+const firstColor = makeColor(35,100,150);
+
+
+//create a blank plain js object;
+//links (sets the constructor of) this object to another object;
+//passes the newly created object from step1 as the this context;
+// returns this if the function doesnt return its own object;
+
+function Color(r,g,b){
+    this.r = r;
+    this.g = g;
+    this.b = b;
+
+}
  
+Color.prototype.rgb = function(){
+    const {r,g,b} = this;
+    return `rgb${r},${g},${b}`;
+}
+
+Array.prototype.pop = function(){
+    //we can override any function in prototype
+}
+
+class Color{
+    constructor(r,g,b, name){
+        this.r = r;    //this will create a varible inside with name of r 
+        this.g = g;
+        this.b = b;
+        this.name = name;
+    }
+    greet(){
+        return console.log("Hello :)"); //we dont need to type prototype and stuff like we did back there 
+                                        //class just collects everything togethor
+    }
+}
+const first = new Color(255, 67, 56, 'white'); //this creates a object with this properties
