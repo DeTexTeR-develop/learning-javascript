@@ -209,10 +209,11 @@ class Pet{
 }
 
 class Cat extends Pet{
-    // constructor(name, age){
-    //     this.name = name;
-    //     this.age = age;
-    // }
+
+    constructor(name, age, livesleft = 9){
+        super(name, age);
+        this.livesleft = livesleft;
+    }
     // eat(){
     //     return `${this.name} is eating!!!`
     // }
@@ -220,7 +221,7 @@ class Cat extends Pet{
         return `meaaaaaoooo `
     }
 }
-class Dog extends Pet
+class Dog extends Pet{
     // constructor(name, age){
     //     this.name = name;
     //     this.age = age;
