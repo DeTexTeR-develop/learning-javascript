@@ -11,7 +11,8 @@ console.log(math.add(34,34));
 console.log(math.square(4));
 
 
-
+const allCats = require('./shelter');
+console.log(allCats);
 
 
 
