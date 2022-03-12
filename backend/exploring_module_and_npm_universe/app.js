@@ -11,6 +11,10 @@ console.log(math.add(34,34));
 console.log(math.square(4));
 
 
+
+//we are exporting a directory and when we export a directory we need to have index.js file and directory will
+// export whatever index.js file exports
+
 const allCats = require('./shelter');
 console.log(allCats);
 
